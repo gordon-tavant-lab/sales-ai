@@ -1,0 +1,98 @@
+# providers.yml — the contrarian's panel of "different minds"
+#
+# Each provider is a distinct model FAMILY so the panel breaks same-family
+# self-preference (the #1 documented bias in tvt-os-judge). A contrarian on the
+# same model that wrote the answer shares its blind spots — that's the whole
+# reason this registry exists.
+#
+# model_panel.sh reads this file, probes each provider for availability, and
+# fans the prompt out to whichever are reachable. Unreachable providers are
+# SKIPPED gracefully (logged, never fatal) — the panel degrades, never breaks.
+#
+# Verified live 2026-06-21 against profile `<your-aws-profile>` (account 687654644864).
+
+# Default expert "hats". The panel assigns one persona per provider so the
+# objections come from genuinely different vantage points, not just different
+# weights. Override per-invocation with model_panel.sh --personas a,b,c.
+personas:
+  skeptical_operator: >
+    You are a battle-scarred operator who has shipped this kind of thing before
+    and watched it fail in production. You care about what breaks at 2am, what
+    the demo hides, and what the happy-path pitch omits. Be specific and concrete.
+  first_principles: >
+    You are a first-principles contrarian. Ignore consensus and convention.
+    Reason from base rates and physical/economic constraints. Ask "why is this
+    true at all" and "what is the simplest thing that would falsify it."
+  outside_industry: >
+    You are an analyst from a completely different industry. You have no domain
+    loyalty. Draw an analogy to how this problem is solved (or fails) elsewhere,
+    and name the assumption that only holds inside this industry's bubble.
+  domain_architect: >
+    You are a senior domain architect. You care about second-order effects,
+    integration debt, reversibility, and the decision that quietly constrains
+    every future decision. Find the load-bearing assumption.
+
+# Providers, in panel-priority order. `kind` selects the call path in model_panel.sh.
+providers:
+  # --- Bedrock cross-vendor (genuinely non-Claude families) -----------------
+  - id: nova-pro
+    kind: bedrock_converse
+    model_id: us.amazon.nova-pro-v1:0
+    family: amazon-nova
+    region: us-east-1
+    aws_profile: <your-aws-profile>  # set to your own AWS CLI profile name
+    default_persona: skeptical_operator
+    enabled: true
+
+  - id: mistral-large
+    kind: bedrock_converse
+    model_id: mistral.mistral-large-3-675b-instruct
+    family: mistral
+    region: us-east-1
+    aws_profile: <your-aws-profile>  # set to your own AWS CLI profile name
+    default_persona: first_principles
+    # on-demand may require an inference profile; script falls back to us.* prefix
+    enabled: true
+
+  # --- External API (maximally different family) ----------------------------
+  - id: gemini-pro
+    kind: gemini
+    model_id: gemini-2.5-pro
+    family: google-gemini
+    api_key_env: GEMINI_API_KEY
+    default_persona: outside_industry
+    enabled: true
+
+  - id: gemini-flash
+    kind: gemini
+    model_id: gemini-2.5-flash
+    family: google-gemini
+    api_key_env: GEMINI_API_KEY
+    default_persona: outside_industry
+    enabled: false   # flash is the fast fallback if pro is rate-limited
+
+  - id: openai
+    kind: openai
+    model_id: gpt-4o
+    family: openai
+    api_key_env: OPENAI_API_KEY
+    default_persona: first_principles
+    enabled: true    # auto-skips when OPENAI_API_KEY is unset
+
+  # --- Local LLM (free, private, zero-network) ------------------------------
+  - id: ollama-local
+    kind: ollama
+    model_id: llama3.1:8b      # change to any pulled model; auto-skips if none
+    family: local-llama
+    default_persona: domain_architect
+    enabled: true
+
+  # --- Claude (same family as the writer — included as the DOMAIN anchor, not
+  #     as a diversity source; flagged same_family in output) -----------------
+  - id: claude-anchor
+    kind: claude_note
+    model_id: claude-opus-4-8
+    family: anthropic-claude
+    same_family: true
+    default_persona: domain_architect
+    enabled: true

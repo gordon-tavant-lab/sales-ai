@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "tvt-sales-skills",
+  "description": "Tavant fintech sales team marketplace — one plugin: 38 tvt-* skills, including the tvt-sales-engine sales router, intel research, sales point-tools, presentations, product/AI-opportunity scoring, general reasoning, and governance. One install action covers everything.",
+  "owner": {
+    "name": "Gordon Chan",
+    "email": "gordon.chan@tavant.com"
+  },
+  "plugins": [
+    {
+      "name": "tvt-sales-skills",
+      "description": "Full sales-team toolkit — who to call this week, account research with fact-checking, POV/deck/proposal drafting, honest deal scorecards. AI drafts, you send. Bundles the Tavant playbooks and branded template it references.",
+      "category": "sales",
+      "source": "."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "tvt-sales-skills",
+  "version": "0.1.0",
+  "description": "Tavant's AI toolkit for the fintech sales team. Tells you who to call this week (confidence-scored shortlists from your own pipeline data), does the account research homework (9-skill intel chain with a mandatory fact-check gate), helps you build the POV, deck, and proposal, and keeps an honest scorecard of how deals are really going. AI drafts, you send — nothing goes out without you. 38 tvt-* skills, including the tvt-sales-engine router, tvt-sales-pov synthesis, tvt-sales-prospect scorer, and governance (tvt-gov-guard/attest), with Tavant playbooks, accelerators, and the branded deck template bundled.",
+  "author": {
+    "name": "Gordon Chan",
+    "email": "gordon.chan@tavant.com"
+  },
+  "keywords": [
+    "fintech",
+    "sales",
+    "enterprise-sales",
+    "client-intelligence",
+    "presales",
+    "tavant"
+  ],
+  "homepage": "https://gitlab.tavant.com/fintech-ai/sales-skills",
+  "license": "UNLICENSED"
+}

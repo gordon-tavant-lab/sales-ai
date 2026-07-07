@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+
+# Gordon-OS session bootstrap junk — auto-spawns in code repos, never commit
+.claude/
+PORTFOLIO.md
+goal-weights.yaml
+dist/

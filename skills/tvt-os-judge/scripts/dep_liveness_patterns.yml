@@ -1,0 +1,18 @@
+# tvt-os-judge v1.2 — operator allowlist for historical-context dependency refs.
+#
+# Entries here are NOT counted by check_dep_liveness.sh. Use this for deps
+# referenced for *historical context* (ADR reversals, "what we dropped and
+# why", retrospectives) but no longer load-bearing in the live stack.
+#
+# Format: lowercase `owner/repo` per entry under `allowlist:`.
+#
+# Audit policy: every entry must have a one-line rationale immediately
+# above it, dated, naming the artifact that revised the dep out of the
+# live stack. Reviewed monthly during judge κ calibration.
+
+allowlist:
+  # 2026-05-15: Kuzu archived October 2025; ADR-002 + ADR-006 revised in
+  # ADRs.md dropped Kuzu from every role. Remaining textual references in
+  # specs/, src/, and intel/ are historical-context only (rationale for
+  # the reversal). Re-evaluate this entry if any code path imports kuzu.
+  - kuzudb/kuzu

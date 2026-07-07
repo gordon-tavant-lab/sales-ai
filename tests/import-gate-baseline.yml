@@ -1,0 +1,49 @@
+comment: Known-open import-readiness findings. Each entry is debt the remediation waves must burn down; publishing requires
+  this file to hold zero findings AND a clean IMPORT_GATE_STRICT=1 run. Never regenerate to hide a regression.
+findings:
+  C11:
+  - dist/tvt-os-judge.zip::unresolved CLAUDE_PLUGIN_ROOT refs survive in the zip
+  - dist/tvt-os-loop.zip::unresolved CLAUDE_PLUGIN_ROOT refs survive in the zip
+  C3:
+  - skills/tvt-core-eval/README.md::references 'g-ai-loop' which does not ship in this package
+  - skills/tvt-core-eval/SKILL.md::references 'g-ai-agents' which does not ship in this package
+  - skills/tvt-core-eval/SKILL.md::references 'g-ai-loop' which does not ship in this package
+  - skills/tvt-core-eval/SKILL.md::references 'g-dev-skill' which does not ship in this package
+  - skills/tvt-core-portfolio/SKILL.md::references 'g-ops-morning' which does not ship in this package
+  - skills/tvt-core-portfolio/SKILL.md::references 'g-ops-weekly' which does not ship in this package
+  - skills/tvt-core-write/SKILL.md::references 'g-create-doc' which does not ship in this package
+  - skills/tvt-core-write/SKILL.md::references 'g-create-pdf' which does not ship in this package
+  - skills/tvt-core-write/SKILL.md::references 'g-create-xlsx' which does not ship in this package
+  - skills/tvt-core-write/SKILL.md::references 'g-ops-morning' which does not ship in this package
+  - skills/tvt-create-explainer/SKILL.md::references 'g-create-doc' which does not ship in this package
+  - skills/tvt-gov-attest/SKILL.md::references 'g-dev-build' which does not ship in this package
+  - skills/tvt-gov-attest/SKILL.md::references 'g-gov-fairness' which does not ship in this package
+  - skills/tvt-gov-attest/SKILL.md::references 'g-learn-determinism-proof' which does not ship in this package
+  - skills/tvt-gov-attest/SKILL.md::references 'g-pm-grow' which does not ship in this package
+  - skills/tvt-gov-guard/SKILL.md::references 'g-core' which does not ship in this package
+  - skills/tvt-gov-guard/SKILL.md::references 'g-dev-build' which does not ship in this package
+  - skills/tvt-gov-guard/SKILL.md::references 'g-dev-observe' which does not ship in this package
+  - skills/tvt-intel-flywheel/SKILL.md::references 'g-skill-suggest' which does not ship in this package
+  - skills/tvt-os-judge/SKILL.md::references 'g-dev-build' which does not ship in this package
+  - skills/tvt-os-judge/SKILL.md::references 'g-ops-weekly' which does not ship in this package
+  - skills/tvt-pm-grow/SKILL.md::references 'g-dev-build' which does not ship in this package
+  - skills/tvt-pm-jtbd/SKILL.md::references 'g-dev-build' which does not ship in this package
+  - skills/tvt-sales-engagement-proposal/SKILL.md::references 'g-create-doc' which does not ship in this package
+  - skills/tvt-sales-engine/SKILL.md::references 'g-dev-build' which does not ship in this package
+  C5:
+  - skills/tvt-core-eval/README.md::author-machine ~/.claude state (policy/CLAUDE.md)
+  - skills/tvt-core-eval/SKILL.md::author-machine ~/.claude state (policy/CLAUDE.md)
+  - skills/tvt-os-judge/SKILL.md::outer-Workspace specs/ path — not shipped
+  - skills/tvt-os-judge/SKILL.md::author-machine .specify path
+  - skills/tvt-os-judge/scripts/judge_hook.sh::author-machine .specify path
+  - accelerators/tvt-sdlc-skills-platform.md::absolute /Users path
+  - accelerators/tvt-sdlc-skills-platform.md::author-machine ~/.claude state (policy/CLAUDE.md)
+  - accelerators/tvt-sdlc-skills-platform.md::author-machine .claude/skills/tvt-dev-commit/ path (not bundled, not in this
+    package)
+  - accelerators/tvt-sdlc-skills-platform.md::author-machine .claude/skills/tvt-dev-standards/ path (not bundled, not in this
+    package)
+  - accelerators/tvt-sdlc-skills-platform.md::author-machine .claude/skills/tvt-eval-audit/ path (not bundled, not in this
+    package)
+  - accelerators/tvt-sdlc-skills-platform.md::author-machine .claude/skills/tvt-eval-score/ path (not bundled, not in this
+    package)
+  - agents/ai-solution-thinker.md::author-machine ~/.claude state (policy/CLAUDE.md)

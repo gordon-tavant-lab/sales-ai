@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sales Engine — Skills, Agents &amp; Tools Reference</title>
+<style>
+  @page { size: Letter; margin: 0.35in 0.4in; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: #1B2A3A;
+    margin: 0;
+    font-size: 8pt;
+    line-height: 1.24;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2.5px solid #1B3A6B;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+  header h1 { font-size: 14pt; margin: 0; color: #1B3A6B; }
+  header .sub { font-size: 7.6pt; color: #55606B; }
+  .cols { display: flex; gap: 14px; }
+  .col { flex: 1; }
+  .cat {
+    background: #1B3A6B;
+    color: #fff;
+    font-size: 8.2pt;
+    font-weight: 700;
+    padding: 2px 6px;
+    margin-top: 6px;
+    border-radius: 2px;
+    letter-spacing: 0.02em;
+  }
+  .cat.g { background: #2E8B7F; }
+  .cat.p { background: #7B4EA8; }
+  .row { padding: 2px 2px; border-bottom: 1px solid #E3E7EC; }
+  .row:last-child { border-bottom: none; }
+  .name { font-weight: 700; color: #1B3A6B; }
+  .desc { color: #33404D; }
+  .trig {
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 7.4pt;
+    color: #2E8B7F;
+    background: #F1F6F4;
+    padding: 0.5px 4px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-top: 1px;
+  }
+  footer {
+    position: fixed;
+    bottom: 0.15in;
+    left: 0;
+    right: 0;
+    padding-top: 3px;
+    border-top: 1px solid #D5DAE0;
+    font-size: 6.6pt;
+    color: #7A8591;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sales Engine — Skills, Agents &amp; Tools Reference</h1>
+  <div class="sub">spec 006 · tvt-sales-engine · one page</div>
+</header>
+
+<div class="cols">
+<div class="col">
+
+<div class="cat">RESEARCH — customer / vertical / competition intel</div>
+<div class="row"><span class="name">g-intel-pipeline</span> — <span class="desc">the master orchestrator; runs the full research package end to end, resumable.</span><br><span class="trig">"run the pipeline on [Company]"</span></div>
+<div class="row"><span class="name">g-intel-deep</span> — <span class="desc">first deep-dive research cycle on a new prospect.</span><br><span class="trig">"research [Company]" / "deep dive on [client]"</span></div>
+<div class="row"><span class="name">g-intel-customer</span> — <span class="desc">the 5-step deep cycle — financials, platform, insider knowledge, market, case studies. Reserve for top-ranked accounts.</span><br><span class="trig">"customer intel on [Company]"</span></div>
+<div class="row"><span class="name">g-intel-dossier</span> — <span class="desc">narrative account story + relationship map (org chart).</span><br><span class="trig">fired automatically inside the pipeline</span></div>
+<div class="row"><span class="name">g-intel-fanout</span> — <span class="desc">scans research/transcripts for named competitors/vendors, researches each.</span><br><span class="trig">"research all the competitors mentioned"</span></div>
+<div class="row"><span class="name">g-intel-qbr</span> — <span class="desc">quarterly business review prep — internal signal + industry + peer + tech-frontier triangulation.</span><br><span class="trig">"prep QBR for [Account]"</span></div>
+<div class="row"><span class="name">g-intel-factcheck</span> — <span class="desc">verifies every claim in an intel file against external sources — mandatory before a POV.</span><br><span class="trig">"fact check [file/directory]"</span></div>
+<div class="row"><span class="name">g-intel-dispatch</span> — <span class="desc">parallel research fan-out across many prospects at once (cloud agents).</span><br><span class="trig">"research all 10 credit-union targets"</span></div>
+<div class="row"><span class="name">g-intel-flywheel</span> — <span class="desc">extracts patterns that repeat across 2+ clients into reusable playbooks — the cross-chain multiplier (§1a).</span><br><span class="trig">"what patterns are we seeing across clients"</span></div>
+
+<div class="cat g">PRODUCT / AI-OPPORTUNITY</div>
+<div class="row"><span class="name">g-pm-jtbd</span> — <span class="desc">scores a client's under-served outcomes (Ulwick ODI) — finds where AI actually pays off.</span><br><span class="trig">"what AI opportunities does [Client] have"</span></div>
+<div class="row"><span class="name">g-pm-grow</span> — <span class="desc">grows scored opportunities into a roadmap + narrative (RICE×Kano + Thompson + MDI).</span><br><span class="trig">"what should we build and pitch to [Client]"</span></div>
+
+</div>
+<div class="col">
+
+<div class="cat p">THIS SALES ENGINE — spec 006's new components</div>
+<div class="row"><span class="name">tvt-sales-engine</span> — <span class="desc">the router — any sales intent, fires the right job. Working — routes to tvt-sales-prospect/tvt-sales-pov/g-intel-*.</span><br><span class="trig">"who should I focus on this week" / "status" / "pipeline"</span></div>
+<div class="row"><span class="name">tvt-sales-prospect</span> — <span class="desc">confidence-scored shortlist under a capacity ceiling, protected floor per motion. Working + tested.</span><br><span class="trig">python score.py --rank --opportunities-file ... --capacity 8 --floor "hunt=3,expand=2"</span></div>
+<div class="row"><span class="name">tvt-sales-pov</span> — <span class="desc">synthesizes a testable Point of View / Business Value Hypothesis. Stage 1 (curated provocations) + job-5 verification gate: working + tested. Stage 2 (flywheel synthesis) gated behind Stage 1 field signal.</span><br><span class="trig">"build a POV for [target]"</span></div>
+<div class="row"><span class="name">kpi.py / eval_backtest.py</span> — <span class="desc">portfolio scorecard + the method of eval — Brier score, calibration, pattern reuse rate, case-study yield.</span><br><span class="trig">python kpi.py --opportunities-file ... --quota-hunt ...</span></div>
+
+<div class="cat">EXISTING SALES POINT-TOOLS</div>
+<div class="row"><span class="name">g-sales-pack</span> — <span class="desc">presales assembly + close support, objection handling.</span><br><span class="trig">"put together a presales pack for [deal]"</span></div>
+<div class="row"><span class="name">g-sales-pitch</span> — <span class="desc">content strategy for a sales deck — what the slides should say, before building them.</span><br><span class="trig">"help me pitch [Client] on [solution]"</span></div>
+<div class="row"><span class="name">g-sales-engagement-proposal</span> — <span class="desc">client-facing engagement proposal (.docx), Tavant consultative style.</span><br><span class="trig">"write a proposal for [Client]"</span></div>
+<div class="row"><span class="name">g-sales-distill</span> — <span class="desc">sharpens the sales-pattern playbook after meetings — run weekly.</span><br><span class="trig">"distill sales" / "/g-sales-distill"</span></div>
+
+<div class="cat g">PRESENTATION</div>
+<div class="row"><span class="name">g-create-deck / g-create-pptx</span> — <span class="desc">build and edit client-facing slide decks.</span><br><span class="trig">"build a deck for [Client]"</span></div>
+<div class="row"><span class="name">g-create-explainer</span> — <span class="desc">persuasive multi-section PDF — describes first, argues last, names the trade-off.</span><br><span class="trig">"make the case for [architecture/idea]"</span></div>
+<div class="row"><span class="name">g-create-design</span> — <span class="desc">visual design pass on an existing deck.</span><br><span class="trig">fired as part of deck-building</span></div>
+
+<div class="cat p">GOVERNANCE (fires automatically, §7 — not manually invoked)</div>
+<div class="row"><span class="name">tvt-gov-guard</span> — <span class="desc">redacts/masks CRM PII before it's used anywhere.</span></div>
+<div class="row"><span class="name">tvt-gov-attest</span> — <span class="desc">tamper-evident, hash-chained decision ledger — the backtest substrate.</span></div>
+
+<div class="cat">AGENTS</div>
+<div class="row"><span class="name">ai-solution-thinker</span> — <span class="desc">structures a new AI-solution design from a raw pain point. Powers tvt-sales-pov's synthesis.</span><br><span class="trig">"discovery call tomorrow — help me structure an approach"</span></div>
+
+<div class="cat g">AUTOMATION (runs on its own — nothing to type)</div>
+<div class="row"><span class="name">Hermes heartbeat</span> — <span class="desc">every 30 min: morning brief, portfolio monitor, weekly review, pattern extraction (spec §6).</span></div>
+
+</div>
+</div>
+
+<footer>
+  <span>Full detail: CAPABILITIES.md (this repo) · spec 006 (specs/006-g-sales-engine/spec.md, Tavant AI Workspace)</span>
+  <span>2026-07-02</span>
+</footer>
+
+</body>
+</html>

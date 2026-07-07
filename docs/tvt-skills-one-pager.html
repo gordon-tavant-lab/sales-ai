@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tavant Skill Family — Reference</title>
+<style>
+  @page { size: Letter; margin: 0.32in 0.38in; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: #1B2A3A;
+    margin: 0;
+    font-size: 7pt;
+    line-height: 1.22;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2.5px solid #1B3A6B;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+  }
+  header h1 { font-size: 13pt; margin: 0; color: #1B3A6B; }
+  header .sub { font-size: 7.2pt; color: #55606B; }
+  .cols { display: flex; gap: 10px; }
+  .col { flex: 1; min-width: 0; }
+  .cat {
+    background: #1B3A6B;
+    color: #fff;
+    font-size: 7.4pt;
+    font-weight: 700;
+    padding: 2px 6px;
+    margin-top: 5px;
+    border-radius: 2px;
+    letter-spacing: 0.02em;
+  }
+  .cat.g { background: #2E8B7F; }
+  .cat.p { background: #7B4EA8; }
+  .cat.o { background: #B5651D; }
+  .cat.k { background: #4A5A6A; }
+  .row { padding: 1.5px 2px; border-bottom: 1px solid #E3E7EC; }
+  .row:last-child { border-bottom: none; }
+  .name { font-weight: 700; color: #1B3A6B; }
+  .desc { color: #33404D; }
+  .stub {
+    font-size: 6.2pt;
+    font-weight: 700;
+    color: #B5651D;
+    background: #FBEEE0;
+    padding: 0 3px;
+    border-radius: 2px;
+    margin-left: 2px;
+  }
+  footer {
+    margin-top: auto;
+    padding-top: 3px;
+    border-top: 1px solid #D5DAE0;
+    font-size: 6.4pt;
+    color: #7A8591;
+    display: flex;
+    justify-content: space-between;
+  }
+  .page {
+    display: flex;
+    flex-direction: column;
+    min-height: 10.2in;
+  }
+  .page-break { page-break-before: always; }
+  .chain { margin-top: 7px; }
+  .goal { font-weight: 700; color: #1B3A6B; font-size: 7.8pt; margin-bottom: 2px; }
+  .steps { font-size: 7pt; line-height: 1.6; }
+  .step {
+    font-family: "SF Mono", Menlo, monospace;
+    font-size: 6.8pt;
+    background: #F1F6F4;
+    color: #2E8B7F;
+    padding: 0.5px 4px;
+    border-radius: 2px;
+    display: inline-block;
+    overflow-wrap: anywhere;
+  }
+  .arrow { color: #9AA5B1; margin: 0 2px; }
+  .why { color: #55606B; font-size: 6.6pt; margin-top: 2px; }
+  .overlay {
+    margin-top: 8px;
+    padding: 6px 7px;
+    background: #F4F6F8;
+    border-radius: 3px;
+    border: 1px solid #E3E7EC;
+  }
+  .overlay h3 { margin: 0 0 4px; font-size: 7.6pt; color: #1B3A6B; }
+  .overlay .row { border-bottom: none; padding: 1px 0; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<header>
+  <h1>Tavant Skill Family — Reference</h1>
+  <div class="sub">tvt skills marketplace — sales · 2 pages</div>
+</header>
+
+<div class="cols">
+<div class="col">
+
+<div class="cat">INTEL — client / competitor / market research</div>
+<div class="row"><span class="name">tvt-intel-pipeline</span> — <span class="desc">master orchestrator; runs the full research package end to end, resumable.</span></div>
+<div class="row"><span class="name">tvt-intel-deep</span> — <span class="desc">first deep-dive research cycle on a new prospect.</span></div>
+<div class="row"><span class="name">tvt-intel-customer</span> — <span class="desc">5-step deep cycle — financials, platform, insider knowledge, market, case studies. Top-ranked accounts only.</span></div>
+<div class="row"><span class="name">tvt-intel-dossier</span> — <span class="desc">narrative account story + relationship map (org chart).</span></div>
+<div class="row"><span class="name">tvt-intel-fanout</span> — <span class="desc">scans research/transcripts for named competitors/vendors, researches each.</span></div>
+<div class="row"><span class="name">tvt-intel-qbr</span> — <span class="desc">quarterly business review prep — internal signal + industry + peer + tech-frontier triangulation.</span></div>
+<div class="row"><span class="name">tvt-intel-factcheck</span> — <span class="desc">verifies every claim in an intel file against external sources — mandatory before a POV.</span></div>
+<div class="row"><span class="name">tvt-intel-dispatch</span> — <span class="desc">parallel research fan-out across many prospects at once (ECS Fargate agents).</span></div>
+<div class="row"><span class="name">tvt-intel-flywheel</span> — <span class="desc">extracts patterns that repeat across 2+ clients into reusable playbooks.</span></div>
+
+<div class="cat p">SALES POINT-TOOLS</div>
+<div class="row"><span class="name">tvt-sales-pack</span> — <span class="desc">assembles a client-tailored presales artifact; optional Tavant branding pass.</span></div>
+<div class="row"><span class="name">tvt-sales-pitch</span> — <span class="desc">content strategy for a sales deck — what the slides should say, before building them.</span></div>
+<div class="row"><span class="name">tvt-sales-engagement-proposal</span> — <span class="desc">client-facing engagement proposal (.docx), Tavant consultative style.</span></div>
+<div class="row"><span class="name">tvt-sales-distill</span> — <span class="desc">sharpens the sales-pattern playbook after meetings — run weekly.</span></div>
+
+</div>
+<div class="col">
+
+<div class="cat g">PRESENTATION</div>
+<div class="row"><span class="name">tvt-create-deck</span> — <span class="desc">full deck pipeline — content strategy → visual design → branded build in one workflow.</span></div>
+<div class="row"><span class="name">tvt-create-pptx</span> — <span class="desc">create, edit, read, screenshot PowerPoint decks.</span></div>
+<div class="row"><span class="name">tvt-create-design</span> — <span class="desc">visual design pass — canvas art, generative art, frontend UI, claude.ai artifacts, Slack GIFs, themes.</span></div>
+<div class="row"><span class="name">tvt-create-explainer</span> — <span class="desc">persuasive multi-section PDF — describes first, argues last, names the trade-off.</span></div>
+<div class="row"><span class="name">tvt-tavantize</span> — <span class="desc">converts any deck/outline into official Tavant-branded PPTX.</span></div>
+
+<div class="cat k">CORE KERNEL — shared engine, 7 skills</div>
+<div class="row"><span class="name">tvt-core-eval</span> — <span class="desc">universal evaluation engine — score, summarize, compare, bench, regress, gate, coverage, calibrate.</span></div>
+<div class="row"><span class="name">tvt-core-extract</span> — <span class="desc">universal extraction engine — signals, entities, patterns, pain-point mappings from any text.</span></div>
+<div class="row"><span class="name">tvt-core-write</span> — <span class="desc">universal writer — any canonical output file, with built-in quality validation.</span></div>
+<div class="row"><span class="name">tvt-core-lookup</span> — <span class="desc">"connect the dots" engine — cross-references signals against portfolio/intel/playbooks.</span></div>
+<div class="row"><span class="name">tvt-core-mcts</span> — <span class="desc">Monte Carlo Tree Search engine — best action sequence for any decision problem with a defined state space.</span></div>
+<div class="row"><span class="name">tvt-core-portfolio</span> — <span class="desc">unified portfolio state manager — read/score/patch through one interface.</span></div>
+<div class="row"><span class="name">tvt-core-clarify</span> — <span class="desc">guided intent clarification — fuzzy idea → shared understanding, one question at a time.</span></div>
+
+<div class="cat p">GOVERNANCE &amp; AGENT — tvt-sales-engine's own transitive deps (kept g-prefixed, vendored as-is)</div>
+<div class="row"><span class="name">tvt-gov-guard</span> — <span class="desc">redacts/masks CRM PII before it's used anywhere.</span></div>
+<div class="row"><span class="name">tvt-gov-attest</span> — <span class="desc">tamper-evident, hash-chained decision ledger — the backtest substrate.</span></div>
+<div class="row"><span class="name">ai-solution-thinker <i>(agent)</i></span> — <span class="desc">structures a new AI-solution design from a raw pain point.</span></div>
+
+</div>
+<div class="col">
+
+<div class="cat o">GENERAL COGNITIVE — 6 skills, reasoning/quality layer</div>
+<div class="row"><span class="name">tvt-os-metacognition</span> — <span class="desc">rep-facing critique front door — routes a new idea/plan to contrarian and/or judge, picks light vs. deep by stakes, returns one verdict.</span></div>
+<div class="row"><span class="name">tvt-os-contrarian</span> — <span class="desc">devil's-advocate red-team pass — light (inline) or deep (multi-model panel) — ends in an evidence-gated recommendation.</span></div>
+<div class="row"><span class="name">tvt-os-judge</span> — <span class="desc">autonomous reviewer/gate for AI-generated artifacts — 4-axis drift score, block-on-fail.</span></div>
+<div class="row"><span class="name">tvt-os-prompt</span> — <span class="desc">turns a rough idea into a polished, copy-ready prompt artifact (CO-STAR gap check).</span></div>
+<div class="row"><span class="name">tvt-os-loop</span> — <span class="desc">orchestrator across all core skills against a brief.</span></div>
+<div class="row"><span class="name">tvt-grill-me</span> — <span class="desc">interviews the user relentlessly on a plan until every branch is resolved.</span></div>
+
+</div>
+</div>
+
+<footer>
+  <span>Full detail: CAPABILITIES.md (this repo) · 38 shipped items (33 tvt-* skills + tvt-sales-engine/pov/prospect + tvt-gov-guard/attest) · 7 stub skills and 2 maintainer-only tools live in unshipped/, not installed</span>
+  <span>2026-07-06 · page 1 of 2</span>
+</footer>
+
+</div>
+
+<div class="page page-break">
+
+<header>
+  <h1>Sales Workflow Recipes — Chaining tvt-* Skills</h1>
+  <div class="sub">spec 007 · sales-skills marketplace plugin · how to stack/pipe skills for a sales goal</div>
+</header>
+
+<div class="cols">
+<div class="col">
+
+<div class="cat">HUNT — net-new logo, prospect → pitch</div>
+<div class="chain">
+<div class="goal">Goal: build a qualified pipeline and get to a first pitch</div>
+<div class="steps">
+<span class="step">tvt-intel-dispatch</span><span class="arrow">→</span><span class="step">tvt-intel-deep</span><span class="arrow">→</span><span class="step">tvt-intel-factcheck</span><span class="arrow">→</span><span class="step">tvt-sales-pitch</span><span class="arrow">→</span><span class="step">tvt-create-deck</span><span class="arrow">→</span><span class="step">tvt-sales-pack</span>
+</div>
+<div class="why">Fan out across the whole target list, deep-dive whoever surfaces as a real fit, verify every claim before it's client-facing, then turn the story into a branded, presales-ready pack.</div>
+</div>
+
+<div class="cat g">EXPAND — quarterly business review</div>
+<div class="chain">
+<div class="goal">Goal: walk into a QBR with a signal-backed narrative</div>
+<div class="steps">
+<span class="step">tvt-intel-qbr</span><span class="arrow">→</span><span class="step">tvt-core-lookup</span><span class="arrow">→</span><span class="step">tvt-os-contrarian</span><span class="arrow">→</span><span class="step">tvt-create-deck</span>
+</div>
+<div class="why">Triangulate internal + industry + peer signal, cross-reference it against the existing portfolio/playbook library, red-team the story before the client sees it, then build the deck.</div>
+</div>
+
+<div class="cat p">DEFENSIBLE POV — any client meeting</div>
+<div class="chain">
+<div class="goal">Goal: never bring an unverified point of view into a client room</div>
+<div class="steps">
+<span class="step">tvt-intel-deep</span><span class="arrow">→</span><span class="step">tvt-intel-factcheck</span><span class="arrow">→</span><span class="step">tvt-os-judge</span><span class="arrow">→</span><span class="step">tvt-create-explainer</span>
+</div>
+<div class="why">Factcheck is the mandatory gate before any POV leaves the building; judge catches drift in the artifact itself; the explainer format describes first and argues last.</div>
+</div>
+
+</div>
+<div class="col">
+
+<div class="cat o">COMPETITIVE DISPLACEMENT</div>
+<div class="chain">
+<div class="goal">Goal: win a deal where a named competitor is already in the room</div>
+<div class="steps">
+<span class="step">tvt-intel-fanout</span><span class="arrow">→</span><span class="step">tvt-core-extract</span><span class="arrow">→</span><span class="step">tvt-os-contrarian</span><span class="arrow">→</span><span class="step">tvt-sales-pitch</span>
+</div>
+<div class="why">Research every competitor/vendor named in the transcripts, pull the pain-point mappings out of that research, stress-test the displacement argument, then write the pitch.</div>
+</div>
+
+<div class="cat k">FLYWHEEL — turn a win into reusable IP</div>
+<div class="chain">
+<div class="goal">Goal: one client's pattern becomes everyone's accelerator</div>
+<div class="steps">
+<span class="step">tvt-intel-flywheel</span><span class="arrow">→</span><span class="step">tvt-core-write</span><span class="arrow">→</span><span class="step">tvt-sales-distill</span>
+</div>
+<div class="why">Extract the pattern that repeated across 2+ clients, write it up as a canonical playbook doc, then fold it into the weekly sales-pattern sharpening pass.</div>
+</div>
+
+<div class="overlay">
+<h3>Overlay layer — applies on top of any chain above, not a step you add yourself</h3>
+<div class="row"><span class="name">tvt-os-metacognition</span> — <span class="desc">wraps any step and auto-routes to contrarian and/or judge, picking light vs. deep by stakes, instead of hand-picking one.</span></div>
+<div class="row"><span class="name">tvt-gov-guard</span> — <span class="desc">redacts/masks CRM PII the instant it enters any chain — fires automatically, never a manual step.</span></div>
+<div class="row"><span class="name">tvt-gov-attest</span> — <span class="desc">hash-chained decision ledger behind <span class="step">tvt-core-mcts</span>/<span class="step">tvt-os-judge</span> outputs, when a decision needs to be backtested later.</span></div>
+</div>
+
+</div>
+</div>
+
+<footer>
+  <span>Recipes are illustrative starting points, not the only valid order — swap/drop steps per deal. Full skill detail: page 1 &amp; CAPABILITIES.md.</span>
+  <span>2026-07-06 · page 2 of 2</span>
+</footer>
+
+</div>
+
+</body>
+</html>
